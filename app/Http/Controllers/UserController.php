@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    function show($id){
-        echo 'hellobro'.$id;
+    function show($name){
+        return view('about',['names'=>$name]);
     }
 }

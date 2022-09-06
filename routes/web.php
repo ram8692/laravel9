@@ -29,3 +29,7 @@ use App\Http\Controllers\UserController;
 
 // Route::get("user/{id}",[UserController::class,"show"]);
 Route::view("about",'/about');
+
+Route::get("user/{name}",[UserController::class,"show"]);
+
+
