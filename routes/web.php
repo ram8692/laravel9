@@ -14,9 +14,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('hello');
-// });
+//  Route::get('/', function () {
+//      return view('welcome');
+//  });
 
 // Route::get('/', function () {
 //     return redirect('about');
@@ -29,9 +29,18 @@ use App\Http\Controllers\UserController;
 
 // Route::get("user/{id}",[UserController::class,"show"]);
 Route::view("about",'/about');
-Route::view("grade",'/grade');
+
 
 Route::get("user/{name}",[UserController::class,"show"]);
 Route::post("getdata",[UserController::class,"getdata"]);
+Route::view("noaccess",'/noaccess');
+Route::view("hello",'/hello');
+
+Route::group(['middleware'=>'protectedPage'],function(){
+    Route::view("grade",'/grade');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
 
 
