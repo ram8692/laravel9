@@ -36,11 +36,16 @@ Route::post("getdata",[UserController::class,"getdata"]);
 Route::view("noaccess",'/noaccess');
 Route::view("hello",'/hello');
 
+/*
 Route::group(['middleware'=>'protectedPage'],function(){
     Route::view("grade",'/grade');
     Route::get('/', function () {
         return view('welcome');
     });
 });
+*/
+
+Route::view("grade",'/grade')->middleware('protectedPage');
+Route::view("/",'/welcome')->middleware('protectedPage');
 
 
