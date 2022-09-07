@@ -21,3 +21,7 @@
 {{URL::to('/about')}}
 <br>
 {{URL::previous()}}
+<script>
+    var userdata = @json($usersdata);
+    console.log(userdata);
+</script>

@@ -29,7 +29,9 @@ use App\Http\Controllers\UserController;
 
 // Route::get("user/{id}",[UserController::class,"show"]);
 Route::view("about",'/about');
+Route::view("grade",'/grade');
 
 Route::get("user/{name}",[UserController::class,"show"]);
+Route::post("getdata",[UserController::class,"getdata"]);
 
 
