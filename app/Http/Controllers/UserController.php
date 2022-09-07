@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 use Illuminate\Http\Request;
 
@@ -24,5 +25,11 @@ class UserController extends Controller
     {
         //return DB::select('select * from users');
         return User::all();
+    }
+
+    function getapidata()
+    {
+        $data = Http::get("https://jsonplaceholder.typicode.com/todos/");
+        return view('grade',['collection'=>$data]);
     }
 }

@@ -44,9 +44,10 @@ Route::group(['middleware'=>'protectedPage'],function(){
     });
 });
 */
-
-Route::view("grade",'/grade')->middleware('protectedPage');
-Route::view("/",'/welcome')->middleware('protectedPage');
+Route::view("grade",'/grade');
+//Route::view("grade",'/grade')->middleware('protectedPage');
+//Route::view("/",'/welcome')->middleware('protectedPage');
 
 Route::get("getdbdata",[UserController::class,"getdbdata"]);
+Route::get("getapidata",[UserController::class,"getapidata"]);
 
