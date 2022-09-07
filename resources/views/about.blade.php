@@ -2,6 +2,15 @@
 <h2>
     {{URL::current()}}
     about page {{$names}}
+    @if($names == "rambabu")
+    <h2>hii</h2>
+    @else
+    <h2>bye</h2>
+    @endif
+
+    @for($i = 0;$i<10;$i++)
+    {{$i}}
+    @endfor
 </h2>
 {{URL::current()}}
 <br>
