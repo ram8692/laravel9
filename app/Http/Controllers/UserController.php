@@ -29,7 +29,10 @@ class UserController extends Controller
 
     function getapidata()
     {
-        $data = Http::get("https://jsonplaceholder.typicode.com/todos/");
-        return view('grade',['collection'=>$data]);
+        $data = json_decode(Http::get("https://reqres.in/api/users"));
+       // json_decode()
+       // print_r($data->data);die();
+        return view('grade',['collection'=>$data->data]);
+        
     }
 }

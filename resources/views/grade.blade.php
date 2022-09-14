@@ -5,7 +5,7 @@
     <button type="submit">Login</button>
 </form> -->
 <?php 
-print_r($collection);
+//print_r($collection);die();
 ?>
 <table>
     <tr>
@@ -16,10 +16,10 @@ print_r($collection);
     </tr>
      @foreach($collection as $data)
     <tr>
-        <td>{{$data->userId}}</td>
+        <td>{{$data->first_name}}</td>
         <td>{{$data->id}}</td>
-        <td>{{$data->title}}</td>
-        <td>{{$data->completed}}</td>
+        <td>{{$data->email}}</td>
+        <td><img src="{{$data->avatar}}" alt=""> </td>
     </tr>
     @endforeach 
 </table>
