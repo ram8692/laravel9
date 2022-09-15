@@ -66,4 +66,13 @@ class UserController extends Controller
         $data = Member::paginate(5);
         return view('pdata', ['data'=>$data]);
     }
+
+    function storeformdatatostore(Request $req){
+        $member = new Member;
+        $member->name = $req->name;
+        $member->gender = $req->gender;
+        $member->save();
+        $req->session()->flash('mess','data has been saved');
+        return redirect('storedata');
+    }
 }

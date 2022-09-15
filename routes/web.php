@@ -91,5 +91,9 @@ Route::view("profilep","profilepage");
 Route::get("list",[UserController::class,"list"]);
 Route::get("paginatedata",[UserController::class,"pdata"]);
 
+Route::view("storedata","storedata");
+Route::post("storeformdata",[UserController::class,"storeformdatatostore"]);
+
+
 
 
