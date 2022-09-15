@@ -93,7 +93,9 @@ Route::get("paginatedata",[UserController::class,"pdata"]);
 
 Route::view("storedata","storedata");
 Route::post("storeformdata",[UserController::class,"storeformdatatostore"]);
+Route::get("delete/{id}",[UserController::class,"deletedata"]);
 
-
+Route::get("edit/{id}",[UserController::class,"sdata"]);
+Route::post("editform",[UserController::class,"update"]);
 
 

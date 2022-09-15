@@ -73,6 +73,26 @@ class UserController extends Controller
         $member->gender = $req->gender;
         $member->save();
         $req->session()->flash('mess','data has been saved');
-        return redirect('storedata');
+        return redirect('list');
     }
+
+    function deletedata($id){
+        $member = Member::find($id);
+        $member->delete();
+        return redirect('list');
+    }
+
+    function sdata($id){
+        $member = Member::find($id);
+        return view('edit_member', ['data'=>$member]);
+    }
+
+    public function update(Request $req){
+        $member = Member::find($req->id);
+        $member->name = $req->name;
+        $member->gender = $req->gender;
+        $member->save();
+        return redirect('list');
+    }
+
 }

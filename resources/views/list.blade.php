@@ -5,6 +5,7 @@
         <td>name</td>
         <td>gender</td>
         <td>created</td>
+        <td>action</td>
     </tr>
     @foreach($data as $member)
     <tr>
@@ -12,6 +13,7 @@
         <td>{{$member->name}}</td>
         <td>{{$member->gender}}</td>
         <td>{{$member->created}}</td>
+        <td><a href="delete/{{$member->id}}">delete</a><a href="edit/{{$member->id}}">edit</a></td>
     </tr>
     @endforeach 
 </table>
