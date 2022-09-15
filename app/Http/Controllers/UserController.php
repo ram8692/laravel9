@@ -51,4 +51,8 @@ class UserController extends Controller
         return redirect('profile');
         //return session('user');
     }
+
+    function uploaddoc(Request $request){
+        return $request->file('file')->store('img');
+    }
 }

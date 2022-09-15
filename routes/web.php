@@ -83,4 +83,6 @@ Route::get("/profile",function(){
     return redirect('login');
 });
 
+Route::view("upload","uploadfile");
+Route::post("uploaddoc",[UserController::class,"uploaddoc"]);
 
