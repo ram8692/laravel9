@@ -89,6 +89,7 @@ Route::post("uploaddoc",[UserController::class,"uploaddoc"]);
 Route::view("profilep","profilepage");
 
 Route::get("list",[UserController::class,"list"]);
+Route::get("paginatedata",[UserController::class,"pdata"]);
 
 
 

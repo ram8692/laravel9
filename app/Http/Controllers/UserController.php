@@ -61,4 +61,9 @@ class UserController extends Controller
         $data = Member::all();
         return view('list', ['data'=>$data]);
     }
+
+    function pdata(){
+        $data = Member::paginate(5);
+        return view('pdata', ['data'=>$data]);
+    }
 }
