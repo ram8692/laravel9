@@ -51,3 +51,6 @@ Route::view("grade",'/grade');
 Route::get("getdbdata",[UserController::class,"getdbdata"]);
 Route::get("getapidata",[UserController::class,"getapidata"]);
 
+Route::view("store",'/storeuser');
+Route::post("storecontroller",[UserController::class,"storedata"]);
+

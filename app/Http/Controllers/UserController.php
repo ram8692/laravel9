@@ -35,4 +35,13 @@ class UserController extends Controller
         return view('grade',['collection'=>$data->data]);
         
     }
+
+    function storedata(Request $request)
+    {
+        //return $request->input();
+        $data =  $request->input("user");
+        $request->session()->flash('user',$data);
+        return redirect('store');
+
+    }
 }
