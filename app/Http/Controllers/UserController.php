@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
+use App\Models\Member;
 
 use Illuminate\Http\Request;
 
@@ -54,5 +55,10 @@ class UserController extends Controller
 
     function uploaddoc(Request $request){
         return $request->file('file')->store('img');
+    }
+
+    function list(){
+        $data = Member::all();
+        return view('list', ['data'=>$data]);
     }
 }
