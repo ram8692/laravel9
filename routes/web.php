@@ -54,3 +54,33 @@ Route::get("getapidata",[UserController::class,"getapidata"]);
 Route::view("store",'/storeuser');
 Route::post("storecontroller",[UserController::class,"storedata"]);
 
+//Route::view("login",'/login');
+Route::post("userlogin",[UserController::class,"userlogin"]);
+//Route::view("profile",'/profile');
+
+//Route::view("profile","profile");
+Route::get("/logout",function(){
+    if(session()->has('user')){
+        session()->pull('user',null);
+    }
+    return redirect('login');
+});
+
+
+Route::get("/login",function(){
+    if(session()->has('user')){
+        //session()->pull('user',null);
+        return redirect('profile');
+    }
+    return view('login');
+});
+
+Route::get("/profile",function(){
+    if(session()->has('user')){
+        //session()->pull('user',null);
+        return view('profile');
+    }
+    return redirect('login');
+});
+
+

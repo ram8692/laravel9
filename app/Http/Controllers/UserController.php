@@ -42,6 +42,13 @@ class UserController extends Controller
         $data =  $request->input("user");
         $request->session()->flash('user',$data);
         return redirect('store');
+    }
 
+    function userlogin(Request $request){
+        
+        $data = $request->input('user');
+        $request->session()->put('user',$data);
+        return redirect('profile');
+        //return session('user');
     }
 }
