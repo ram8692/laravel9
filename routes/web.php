@@ -97,5 +97,7 @@ Route::get("delete/{id}",[UserController::class,"deletedata"]);
 
 Route::get("edit/{id}",[UserController::class,"sdata"]);
 Route::post("editform",[UserController::class,"update"]);
+Route::get("queryb",[UserController::class,"queryb"]);
+Route::get("aggregate",[UserController::class,"aggregate"]);
 
-
+Route::get("joinq",[UserController::class,"joinq"]);

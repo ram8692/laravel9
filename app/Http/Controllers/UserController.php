@@ -95,4 +95,42 @@ class UserController extends Controller
         return redirect('list');
     }
 
+    public function queryb(){
+       //to get all data
+       // $data = DB::table("members")->get();
+
+      // $data = DB::table("members")->where("id",5)->get();
+
+     // $data = (array)DB::table("members")->find(5);
+
+     //$data = DB::table("members")->count();
+        //return $data;
+
+        //insert data
+        /* $data = DB::table("members")->insert([
+             'name'=>'test1',
+             'gender'=>'female',
+         ]);*/
+
+        //update data
+        /*
+         $data = DB::table("members")->where('id',6)->update([
+             'name'=>'test2',
+             'gender'=>'female',
+         ]);*/
+
+        // $data = DB::table("members")->where('id',6)->delete(); 
+    }
+
+    public function aggregate(){
+        $data = DB::table("members")->avg('id');
+        return $data;
+    }
+
+    public function joinq(){
+        $data = DB::table("users")->join('members','members.user_id',"=","users.id")->where("members.user_id",2)->select('members.name','users.name')->get();
+
+        return $data;
+    }
+
 }
