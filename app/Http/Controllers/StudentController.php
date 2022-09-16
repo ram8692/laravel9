@@ -25,6 +25,7 @@ class StudentController extends Controller
         //$student = Student::with('posts','result')->get();
         //dd($student->toArray());*/
 
+        //below case is for belongsto
         $post = Post::with('student')->get();
         dd($post->toArray());
 
