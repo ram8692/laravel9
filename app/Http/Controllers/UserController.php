@@ -132,5 +132,13 @@ class UserController extends Controller
 
         return $data;
     }
+    
+    function ono(){
+       return Member::find(1)->UserData;
+    }
+
+    function showdata(Member $key){
+return $key;
+    }
 
 }

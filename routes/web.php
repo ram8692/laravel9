@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,3 +102,7 @@ Route::get("queryb",[UserController::class,"queryb"]);
 Route::get("aggregate",[UserController::class,"aggregate"]);
 
 Route::get("joinq",[UserController::class,"joinq"]);
+Route::get("ono",[UserController::class,"ono"]);
+
+Route::get('member/{id}',[UserController::class,'showdata']);
+Route::get('student',[StudentController::class,'index']);
