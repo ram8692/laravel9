@@ -9,7 +9,8 @@ class Result extends Model
 {
     use HasFactory;
     public function student(){
-       // $this->belongsTo(User::class);
+
+        return $this->belongsTo(User::class);
        
     }
 }
