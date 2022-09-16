@@ -10,6 +10,6 @@ class StudentController extends Controller
     public function index(){
         $student = Student::with('result')->get();
         echo '<pre>';
-        print_r($student);
+        dd($student->toArray());
     }
 }
