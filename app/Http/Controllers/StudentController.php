@@ -14,8 +14,16 @@ class StudentController extends Controller
         echo '<pre>';
         dd($student->toArray());*/
         
-        //reverse
-        $result = Result::with('student')->get();
-        dd($result->toArray());
+        //reverse in belongs to case
+       /* $result = Result::with('student')->get();
+        dd($result->toArray());*/
+
+        /* below case is for has many*/
+        $student = Student::with('posts')->get();
+        //in below case we are getting data from result as well 
+        $student = Student::with('posts','result')->get();
+        dd($student->toArray());
+        
+
     }
 }

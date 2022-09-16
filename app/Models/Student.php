@@ -11,4 +11,8 @@ class Student extends Model
     public function result(){
         return $this->hasOne(Result::class);
     }
+
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }
