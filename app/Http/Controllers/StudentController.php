@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Result;
+use App\Models\Category;
 
 class StudentController extends Controller
 {
@@ -26,7 +27,14 @@ class StudentController extends Controller
         //dd($student->toArray());*/
 
         //below case is for belongsto
-        $post = Post::with('student')->get();
+        /*$post = Post::with('student')->get();
+        dd($post->toArray());*/
+$categories = Category::all();
+
+
+        $post = Post::with('category')->get();
+        $post->category()->attach([1,2]);
+        $post = Post::with('category')->get();
         dd($post->toArray());
 
     }

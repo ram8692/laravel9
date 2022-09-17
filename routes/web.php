@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SongController;
+use App\Http\Controllers\SingerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +109,7 @@ Route::get("ono",[UserController::class,"ono"]);
 
 Route::get('member/{id}',[UserController::class,'showdata']);
 Route::get('student',[StudentController::class,'index']);
+Route::get('add_song',[SongController::class,'add_song']);
+Route::get('add_singer',[SingerController::class,'add_singer']);
+Route::get('show_song/{id}',[SongController::class,'show_song']);
+Route::get('show_singer/{id}',[SongController::class,'show_singer']);
