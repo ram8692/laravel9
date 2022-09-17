@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('getapidata',[MyApiController::class,'api_data']);
+Route::get('get_member_data',[MyApiController::class,'get_member_data']);
