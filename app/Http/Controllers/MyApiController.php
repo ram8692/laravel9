@@ -28,4 +28,18 @@ class MyApiController extends Controller
         }
         
     }
+
+    function update_member_data(Request $req){
+        $member = Member::find($req->id);
+        $member->name = $req->name;
+        $member->gender = $req->gender;
+        $member->user_id = $req->user_id;
+        $result = $member->save();
+        if($result){
+            return ['result'=>'data updated'];
+        }else{
+            return ['result'=>'sorry update failed'];
+        }
+        
+    }
 }
