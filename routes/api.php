@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('getapidata',[MyApiController::class,'api_data']);
-Route::get('get_member_data',[MyApiController::class,'get_member_data']);
+Route::get('get_member_data/{id}',[MyApiController::class,'get_member_data']);
+Route::post('save_member_data',[MyApiController::class,'save_member_data']);
