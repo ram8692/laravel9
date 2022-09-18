@@ -44,6 +44,7 @@ class MyApiController extends Controller
     }
 
     function search_member_data($name){
-        return Member::where("name",$name)->get();
+       // return Member::where("name",$name)->get();
+       return Member::where("name","like","%".$name."%")->get();
     }
 }
