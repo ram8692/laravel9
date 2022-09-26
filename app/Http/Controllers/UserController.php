@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use App\Models\Member;
+use App\Service\AwesomeServiceInterface;
 
 use Illuminate\Http\Request;
 
@@ -139,6 +140,10 @@ class UserController extends Controller
 
     function showdata(Member $key){
 return $key;
+    }
+
+    function test_provider(AwesomeServiceInterface $awsomeservice){
+        $awsomeservice->doAwesomething();
     }
 
 }
