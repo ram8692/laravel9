@@ -2,13 +2,25 @@
 
 namespace App\Service;
 
-class PaypalService{
- 
-    public function pay():string
+use Illuminate\Support\Arr;
+
+class PaypalService
+{
+
+
+    private $transactionid;
+
+    public function __construct($transactionid)
     {
-        return 'payment via paypal';
+        $this->transactionid = $transactionid;
+    }
+
+
+    public function pay(): array
+    {
+        return [
+            'amount' => '10000',
+            'transaction_id' => $this->transactionid
+        ];
     }
 }
-
-
-?>
