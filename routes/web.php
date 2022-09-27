@@ -114,3 +114,9 @@ Route::get('add_singer',[SingerController::class,'add_singer']);
 Route::get('show_song/{id}',[SongController::class,'show_song']);
 Route::get('show_singer/{id}',[SongController::class,'show_singer']);
 Route::get('test_provider',[UserController::class,'test_provider']);
+
+Route::get('paypal', function (\App\Service\PaypalService $payment) {
+         //return view('welcome');
+         dump($payment->pay());
+         dd(app());
+     });
