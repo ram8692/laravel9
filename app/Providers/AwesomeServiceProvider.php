@@ -14,6 +14,7 @@ class AwesomeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //below methods are alternative ,u can apply code works same
         //$this->app->bind('App\Service\AwesomeServiceInterface','App\Service\AwesomeService');
         //$this->app->bind(AwesomeServiceInterface::class,AwesomeService::class);
         //App::bind(AwesomeServiceInterface::class,AwesomeService::class);
