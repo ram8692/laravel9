@@ -129,6 +129,8 @@ Route::get('test_provider',[UserController::class,'test_provider']);
     //      return \App\Service\AwesomeServiceInterface::doAwesomething();
     //  });
 
-    
+    Route::get('test_facade',function(){
+        return \App\Facades\PaymentFacade::getFacadsAccessor();
+    });
 
 
