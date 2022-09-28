@@ -117,6 +117,7 @@ Route::get('test_provider',[UserController::class,'test_provider']);
 
 Route::get('paypal', function (\App\Service\PaypalService $payment) {
          //return view('welcome');
-         dump($payment->pay());
-         dd(app());
+        // dump($payment->pay());
+        //below is the multiple instance of class  
+         dd(app(\App\Service\PaypalService::class),app(\App\Service\PaypalService::class));
      });
