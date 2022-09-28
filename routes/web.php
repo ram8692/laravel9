@@ -5,7 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\SingerController;
-
+use Illuminate\Foundation\Bootstrap\RegisterFacades;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Facade;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,9 +117,18 @@ Route::get('show_song/{id}',[SongController::class,'show_song']);
 Route::get('show_singer/{id}',[SongController::class,'show_singer']);
 Route::get('test_provider',[UserController::class,'test_provider']);
 
-Route::get('paypal', function (\App\Service\PaypalService $payment) {
+/*Route::get('paypal', function (\App\Service\PaypalService $payment) {
          //return view('welcome');
         // dump($payment->pay());
         //below is the multiple instance of class  
          dd(app(\App\Service\PaypalService::class),app(\App\Service\PaypalService::class));
-     });
+     });*/
+
+     //below code is not working some issue is there
+    //  Route::get('test_provider_facade',function(){
+    //      return \App\Service\AwesomeServiceInterface::doAwesomething();
+    //  });
+
+    
+
+
