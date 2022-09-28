@@ -129,8 +129,18 @@ Route::get('test_provider',[UserController::class,'test_provider']);
     //      return \App\Service\AwesomeServiceInterface::doAwesomething();
     //  });
 
-    Route::get('test_facade',function(){
-        return \App\Facades\PaymentFacade::getFacadsAccessor();
+    // Route::get('test_facade',function(){
+    //     return \App\Facades\PaymentFacade::getFacadsAccessor();
+    // });
+
+    Route::get('test_facade2',function(){
+       // $user = new \App\MyCustomLibraries\User();
+      //  $user->my_name();
+
+        //\App\MyCustomLibraries\TserFacade::my_name();
+
     });
+
+    
 
 
