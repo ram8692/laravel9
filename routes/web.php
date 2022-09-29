@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\SingerController;
+use App\Models\Member;
+use App\Models\User;
 use Illuminate\Foundation\Bootstrap\RegisterFacades;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Facade;
@@ -140,6 +142,89 @@ Route::get('test_provider',[UserController::class,'test_provider']);
         //\App\MyCustomLibraries\TserFacade::my_name();
 
     });
+
+    Route::get('collection',function(){
+        /* //1st method
+        $collection = collect([1,2,3,4,5,6,7,8]);
+        dd($collection); */
+
+        $collection = \Illuminate\Support\Collection::make([1,2,3,3,4,5,6,7,8]);
+        //dd($collection->all());
+        //dd($collection->get(1));
+        //dd($collection);
+        //dd($collection->count());
+        //dd($collection->sum());
+        //dd($collection->avg());
+        //dd($collection->chunk(3));
+        //$collection->dd();
+        //$collection->dump();
+        //return $collection->duplicates();
+        //return $collection->shuffle();
+        //return $collection->min();
+        //return $collection->max();
+        //return $collection->mode();
+        //return $collection->first();
+        //return $collection->last();
+        //$member = Member::all();
+        //dd($member->pluck('name'));
+       // dd($member->unique('created_at'));
+
+     /*   $collection = collect([
+           ["name"=>"test1","age"=>12],
+           ["name"=>"test2","age"=>22],
+           ["name"=>"test3","age"=>32],
+           ["name"=>"test4","age"=>42],
+           ["name"=>"test5","age"=>62],
+           ["name"=>"test6","age"=>52],
+        ]); */
+
+        $collection = collect([1,2,3,4,5,6,7,8]);
+
+       // dd($collection->where("age",">",60));
+       //dd($collection->whereIn("age",[12,22,32]));
+       //dd($collection->whereBetween("age",[12,32]));
+       //dd($collection->implode(", "));
+       //dd($collection->join(", "," and "));
+       //return $collection->toJson();
+
+      /* 
+      map will not change array value in its own
+      $newc = $collection->map(function($value){
+        return $value*2;
+       });
+
+       dd($newc);
+ */
+/*
+transform will  change array value in its own
+$collection->transform(function($value){
+    return $value*2;
+   });
+
+   dd($collection); */
+   //pull,push,pop
+
+   //lazy collection
+  /*  $member = \App\Models\Member::cursor();
+     foreach($member->take(2) as $mem){
+echo $mem->name;
+echo '<br>';
+     } */
+
+     $member = \App\Models\Member::cursor()->remember();
+     foreach($member->take(2) as $mem){
+echo $mem->name;
+echo '<br>';
+     }
+     echo '<br>';
+     echo '<br>';
+     echo '<br>';
+     foreach($member->take(4) as $mem){
+        echo $mem->name;
+        echo '<br>';
+             }
+
+     });
 
     
 
