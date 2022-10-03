@@ -9,6 +9,7 @@ use App\Models\Member;
 use App\Models\User;
 use Illuminate\Foundation\Bootstrap\RegisterFacades;
 use Illuminate\Support\Facades\App;
+
 use Illuminate\Support\Facades\Facade;
 
 /*
@@ -226,6 +227,14 @@ echo '<br>';
 
      });
 
+//below is the contract 
+//u can choose in which way u have to call there are two ways facades and contract 
+ Route::get('contract',function(Illuminate\Contracts\Cache\Factory $cache){
+
+    $cache->put('name','the ram coder');
+dd($cache->get('name'));
+
+ });
     
 
 
