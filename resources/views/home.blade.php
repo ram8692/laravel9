@@ -8,6 +8,10 @@
 </head>
 <body>
     <h2>hi bro</h2>
-    <x-alert></x-alert>
+    <x-alert>
+        <b>this is my slot</b>
+        <x-slot:heading>slot heading</x-slot>
+        <x-slot:title>slot title</x-slot>
+    </x-alert>
 </body>
 </html>
