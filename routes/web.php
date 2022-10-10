@@ -235,6 +235,10 @@ echo '<br>';
 dd($cache->get('name'));
 
  });
+
+   Route::get('/home', function () {
+      return view('home');
+  });
     
 
 
